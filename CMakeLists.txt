@@ -29,12 +29,15 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 find_package(Protobuf REQUIRED)
 
-enable_testing()
-
+# add project code
 add_subdirectory(src)
 add_subdirectory(proto)
 add_subdirectory(util)
+
+# add unit test module
+enable_testing()
 add_subdirectory(test)
+
 
 PROTOBUF_GENERATE_CPP(PROTO_SRCS PROTO_HDRS proto/pb_test.proto)
 
