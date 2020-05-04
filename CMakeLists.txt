@@ -10,6 +10,7 @@ include_directories(
     3rd_libs/include/glog
     3rd_libs/include
     3rd_libs/include/protobuf3.6.1
+    3rd_libs/include/asio1.61.1/include
     #/usr/local/include
     #/usr/include
     build/proto
@@ -21,7 +22,7 @@ include_directories(util src proto)
 link_directories(
     3rd_libs/lib
     #/usr/local/lib
-    /usr/lib
+    #/usr/lib
 )
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")

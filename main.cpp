@@ -1,5 +1,6 @@
 #include <iostream>
 #include <glog/logging.h>
+#include <gflags/gflags.h>
 #include <google/protobuf/message_lite.h>
 
 #include "util/calc.hpp"
@@ -8,6 +9,9 @@
 
 #include "pb_test.pb.h"
 
+#include <asio.hpp>
+
+#define FLAGS_run_io_service true
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +28,15 @@ int main(int argc, char *argv[])
 
   std::cout << pa.name() << std::endl;
 
+  asio::io_service io_service;
+  io_service.post([]() {
+    std::cout << "Running async method " << std::endl;
+  });
+
+  if (FLAGS_run_io_service)
+  {
+    io_service.run();
+  }
 
   LOG(INFO) << hello_world();
 
