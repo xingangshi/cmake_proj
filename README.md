@@ -78,16 +78,22 @@ target_link_libraries(<target>
 #### 创建和安装包
 '''
 mkdir src/build
+
 cd src/build
+
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~/.local ..
+
 cmake --build . --target install
 '''
 
 #### 创建和测试流程
 '''
 mkdir test/build
+
 cd test/build
+
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~/.local ..
+
 ctest -W
 '''
 
