@@ -54,11 +54,11 @@
 > 4. 目标库、接口库、别名库、导入库 add_library(OBJECT | INTERFACE | ALIAS | IMPORTED [GLOBAL])
 
 #### Target_XXX()
-'''python
+```python
 target_link_libraries(<target>
                       <PRIVATE|PUBLIC|INTERFACE> <item> ...
                      [<PRIVATE|PUBLIC|INTERFACE> <item> ...]...)
-'''
+```
 
 #### 避免使用的一些操作
 ##### 不要使用宏定义的
@@ -76,7 +76,7 @@ target_link_libraries(<target>
 ##### 避免使用不必要的变量
 
 #### 创建和安装包
-'''
+```shell
 mkdir src/build
 
 cd src/build
@@ -84,10 +84,10 @@ cd src/build
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~/.local ..
 
 cmake --build . --target install
-'''
+```
 
 #### 创建和测试流程
-'''
+```shell
 mkdir test/build
 
 cd test/build
@@ -95,7 +95,7 @@ cd test/build
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=~/.local ..
 
 ctest -W
-'''
+```
 
 
 #### 使用 submodule 信息
