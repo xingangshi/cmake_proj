@@ -4,90 +4,90 @@
 
 #### [Cmake](https://cmake.org/cmake/help/latest/manual/cmake-packages.7.html) 基础
 ##### 1. commands
-> cmmmand_name(space seperated list of strings)
+> `cmmmand_name(space seperated list of strings)`
 
 ##### 2. Variable
-> set(<variable> <value>... [PARENT_SCOPE])
+> `set(<variable> <value>... [PARENT_SCOPE])`
 >>
->> set(hello world)
+>> `set(hello world)`
 >
-> message([<mode>] "message text" ...)
+> `message([<mode>] "message text" ...)`
 >>
->> message(STATUS "hello, ${hello})
+>> `message(STATUS "hello, ${hello})`
 >
-> cmake_minimum_required(VERSION x.y)
+> `cmake_minimum_required(VERSION x.y)`
 >
-> project(<name>)
+> `project(<name>)`
 >
-> option(SECRET_FEATURE “Enable secretfeature” OFF)
+> `option(SECRET_FEATURE “Enable secretfeature” OFF)`
 
 ##### 3. 流程控制
-> if() / elseif() / else() / endif()
+> `if() / elseif() / else() / endif()`
 >
-> foreach() / endforeach()
+> `foreach() / endforeach()`
 >
-> while() / endwhile()
+> `while() / endwhile()`
 >
-> break() / continue() / return()
+> `break() / continue() / return()`
 
 ##### 4. 目标文件生成相关
-> include(<file>)
+> `include(<file>)`
 >
-> add_subdirectory(<dir>)
+> `add_subdirectory(<dir>)`
 >
-> add_executable(<name> [WIN32] [MACOSX_BUNDLE][source1] [source2 ...])
+> `add_executable(<name> [WIN32] [MACOSX_BUNDLE][source1] [source2 ...])`
 >
-> file([WRITE|READ] <file> <content>)
+> `file([WRITE|READ] <file> <content>)`
 >
-> add_library(<name> [STATIC | SHARED | INTERFACE] [source1] [source2 ...])
+> `add_library(<name> [STATIC | SHARED | INTERFACE] [source1] [source2 ...])`
 >
-> add_custom_target(<name> [COMMAND command] [args] [DEPENDS depends] [WORKING_DIRECTORY dir])
+> `add_custom_target(<name> [COMMAND command] [args] [DEPENDS depends] [WORKING_DIRECTORY dir])`
 >
-> target_include_directories(<target> [PUBLIC | INTERFACE | PRIVATE ] <dir>)
+> `target_include_directories(<target> [PUBLIC | INTERFACE | PRIVATE ] <dir>)`
 >
-> target_compile_definitions(<target> [PUBLIC | INTERFACE | PRIVATE ] <name>=<value>)
+> `target_compile_definitions(<target> [PUBLIC | INTERFACE | PRIVATE ] <name>=<value>)`
 >
-> target_compile_options(<target> [PUBLIC | INTERFACE | PRIVATE ] <option>)
+> `target_compile_options(<target> [PUBLIC | INTERFACE | PRIVATE ] <option>)`
 >
-> target_link_libraries(<target> [PUBLIC | PRIVATE | INTERFACE] <lib>)
+> `target_link_libraries(<target> [PUBLIC | PRIVATE | INTERFACE] <lib>)`
 
 ##### 5. 其他
-> include_directories()
+> `include_directories()`
 >
-> add_definitions()
+> `add_definitions()`
 >
-> add_dependencies()
+> `add_dependencies()`
 >
-> add_compile_options()
+> `add_compile_options()`
 >
-> find_package()
+> `find_package()`
 >
-> enable_testing()
+> `enable_testing()`
 >
-> add_test()
+> `add_test()`
 >
-> Comments start with #
+> `Comments start with #`
 
 
 #### Cmake 备注
 
 ##### 引入目录
-> 1. 外部或者第三方的目录 add_subdirectory()
+> 1. 外部或者第三方的目录 `add_subdirectory()`
 >
-> 2. 第三方的库使用 ·git submodules· 添加的，使用 add_subdirectory()
+> 2. 第三方的库使用 `git submodules` 添加的，使用 `add_subdirectory()`
 >
-> 3. ExternalProject_Add()，使用 add_subdirectory()
+> 3. `ExternalProject_Add()`，使用 `add_subdirectory()`
 >
-> 4. 下载和安装的第三方库，使用 find_package()
+> 4. 下载和安装的第三方库，使用 `find_package()`
 
 #####  Cmake 的各种目标类型
-> 1. 可执行文件 add_executable
+> 1. 可执行文件 `add_executable()`
 >
-> 2. 动态库 add_library(SHARED)，默认的是动态库 BUILD_SHARED_LIBS
+> 2. 动态库 `add_library(SHARED)`，默认的是动态库 `BUILD_SHARED_LIBS`
 >
-> 3. 静态库 add_library(STATIC)
+> 3. 静态库 `add_library(STATIC)`
 >
-> 4. 目标库、接口库、别名库、导入库 add_library(OBJECT | INTERFACE | ALIAS | IMPORTED [GLOBAL])
+> 4. 目标库、接口库、别名库、导入库 `add_library(OBJECT | INTERFACE | ALIAS | IMPORTED [GLOBAL])`
 
 ##### Target_XXX()
 ```makefile
@@ -98,15 +98,15 @@ target_link_libraries(<target>
 
 #### 避免使用的一些操作
 ##### 不要使用宏定义的
-> add_definitions()
+> `add_definitions()`
 >
-> add_compile_options()
+> `add_compile_options()`
 >
-> include_directories()
+> `include_directories()`
 >
-> link_directories()
+> `link_directories()`
 >
-> link_libraries()
+> `link_libraries()`
 
 ##### 不要使用全局的文件
 ##### 避免使用不必要的变量
