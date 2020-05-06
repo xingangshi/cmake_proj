@@ -11,11 +11,11 @@ enable_testing()
 add_test(NAME pass COMMAND pass)
 add_test(NAME fail COMMAND fail)
 
-#set_property(TEST fail
-#    PROPERRY WILL_FAIL TRUE
-#)
-#
-#
-#set_property(TEST pass
-#    PROPERRY WILL_FAIL TRUE
-#)
+set_property(TEST fail
+    PROPERTY WILL_FAIL TRUE
+)
+
+
+set_property(TEST pass
+    PROPERTY WILL_FAIL TRUE
+)
