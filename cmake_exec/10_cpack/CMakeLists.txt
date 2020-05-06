@@ -2,10 +2,12 @@ cmake_minimum_required(VERSION 3.2)
 
 project(10_cpack)
 
-set(CMAKE_DEBUG_POSTFIX "-d")
+#set(CMAKE_DEBUG_POSTFIX "-d")
 
-#set(CAMKE_BUILD_TYPE "Release")
-set(CAMKE_BUILD_TYPE "Debug")
+set(CMAKE_BUILD_TYPE "Release")
+#set(CMAKE_BUILD_TYPE "Debug")
+
+message(STATUS "Build type : ${CMAKE_BUILD_TYPE}")
 
 add_library(Foo STATIC Foo.cpp)
 
