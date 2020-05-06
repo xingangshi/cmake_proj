@@ -98,3 +98,13 @@ ctest -W
 '''
 
 
+#### 使用 submodule 信息
+> 1. `git submodule add https://github.com/protocolbuffers/protobuf.git 3rd_libs/include/protobuf`
+>
+> 2. `git submodule add https://github.com/google/googletest.git 3rd_libs/include/googletest`
+>
+> 3. `git submodule add https://github.com/google/glog.git  3rd_libs/include/glog`
+>
+> 4. `git submodule add https://github.com/gflags/gflags.git  3rd_libs/include/gflags`
+>
+> 5. `git submodule add https://github.com/chriskohlhoff/asio.git  3rd_libs/include/asio`
