@@ -2,16 +2,20 @@ cmake_minimum_required(VERSION 3.15)
 
 project(cmake_proj)
 
-include_directories(${PROTOBUF_INCLUDE_DIRS}
+#include_directories(${PROTOBUF_INCLUDE_DIRS}
+#    ${CMAKE_CURRENT_BINARY_DIR}
+#)
+
+include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
 )
 
 include_directories(
-    3rd_libs/include/glog
-    3rd_libs/include
-    3rd_libs/include/protobuf3.6.1
-    3rd_libs/include/asio1.61.1/include
-    #/usr/local/include
+    3rd_libs/include/glog/src
+    3rd_libs/include/gflags/include
+    3rd_libs/include/protobuf/src
+    3rd_libs/include/asio/include
+    /usr/local/include
     #/usr/include
     build/proto
 

@@ -25,7 +25,7 @@ message("Test this document: "  ${CMAKE_CURRENT_SOURCE_DIR})
 
 # 需包含的头文件
 INCLUDE_DIRECTORIES(
-    ../3rd_libs/include/googletest1.8.0/include
+    ../3rd_libs/include/googletest/googletest/include
     #/usr/local/include
     #/usr/include
 )
