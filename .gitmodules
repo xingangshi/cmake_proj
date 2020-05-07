@@ -14,3 +14,6 @@
 [submodule "3rd_libs/include/asio"]
 	path = 3rd_libs/include/asio
 	url = https://github.com/chriskohlhoff/asio.git
+[submodule "cmake_exec/swig_for_py3"]
+	path = cmake_exec/swig_for_py3
+	url = https://github.com/xingangshi/swig_for_py3.git
