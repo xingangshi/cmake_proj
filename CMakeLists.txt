@@ -11,11 +11,10 @@ include_directories(
 )
 
 include_directories(
-    3rd_libs/include/glog/src
-    3rd_libs/include/gflags/include
+    3rd_libs/hpp
     3rd_libs/include/protobuf/src
-    3rd_libs/include/asio/include
-    /usr/local/include
+    3rd_libs/include/asio/asio/include
+    #/usr/local/include
     #/usr/include
     build/proto
 
