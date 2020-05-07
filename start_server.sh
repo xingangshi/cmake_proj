@@ -13,7 +13,15 @@ function del_old
 
 function build_server
 {
-  cd build && cmake .. && make && cd ..
+  cd build
+
+  if [[ $1 == 1 ]];then
+    echo "Build With Ninja"
+    cmake -GNinja .. && ninja && cd ..
+  else
+    echo "Build With cmake"
+    cmake .. && make && cd ..
+  fi
 }
 
 function start
@@ -26,9 +34,9 @@ function start
 function start_all
 {
   del_old
-  build_server
+  build_server $1
   start
 }
 
-start_all
+start_all $1
 
