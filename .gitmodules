@@ -1,0 +1,3 @@
+[submodule "other_exec/swig_for_py3"]
+	path = other_exec/swig_for_py3
+	url = git@github.com:xingangshi/swig_for_py3.git
